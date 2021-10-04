@@ -43,8 +43,31 @@ body{
 	height: 647px;
 }
 
-#dieRoll0, #dieRoll1, #dieRoll2, #dieRoll3{
+
+#swordType0, #swordType1, #swordType2, #swordType3{
     position: absolute;
     top: 72px;
     left: 45px;
+}
+
+
+#swordAlignment0, #swordAlignment1, #swordAlignment2, #swordAlignment3{
+    position: absolute;
+    top: 132px;
+    left: 45px;
+}
+
+
+
+#swordIntelligence0, #swordIntelligence1, #swordIntelligence2, #swordIntelligence3{
+    position: absolute;
+    top: 152px;
+    left: 45px;
+}
+
+
+#dieRoll0, #dieRoll1, #dieRoll2, #dieRoll3{
+    position: absolute;
+    top: 72px;
+    left: 345px;
 }
