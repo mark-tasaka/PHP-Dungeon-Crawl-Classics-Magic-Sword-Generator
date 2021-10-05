@@ -25,10 +25,17 @@
 
 include 'php/magicSword.php';
 
+/*
 $dieRoll0 = getDieRoll();
 $dieRoll1 = getDieRoll();
 $dieRoll2 = getDieRoll();
 $dieRoll3 = getDieRoll();
+*/
+
+$dieRoll0 = 100;
+$dieRoll1 = 100;
+$dieRoll2 = 95;
+$dieRoll3 = 95;
 
 $swordToHit0 = getToHitBonus($dieRoll0);
 $swordToHit1 = getToHitBonus($dieRoll1);
@@ -59,6 +66,51 @@ $swordCommunication0 = getSwordCommunication($dieRoll0);
 $swordCommunication1 = getSwordCommunication($dieRoll1);
 $swordCommunication2 = getSwordCommunication($dieRoll2);
 $swordCommunication3 = getSwordCommunication($dieRoll3);
+
+$swordSpecialPurposeNumber0 = array();
+$swordSpecialPurposeNumber1 = array();
+$swordSpecialPurposeNumber2 = array();
+$swordSpecialPurposeNumber3 = array();
+
+$swordSpecialPurposeNumber0 = getSwordSpecialPurposeNumber($dieRoll0);
+$swordSpecialPurposeNumber1 = getSwordSpecialPurposeNumber($dieRoll1);
+$swordSpecialPurposeNumber2 = getSwordSpecialPurposeNumber($dieRoll2);
+$swordSpecialPurposeNumber3 = getSwordSpecialPurposeNumber($dieRoll3);
+
+$swordSpecialPurpose0 = array();
+$swordSpecialPurpose1 = array();
+$swordSpecialPurpose2 = array();
+$swordSpecialPurpose3 = array();
+
+$swordSpecialPurpose0 = getSwordSpecialPurpose($swordSpecialPurposeNumber0, $swordAlignment0);
+$swordSpecialPurpose1 = getSwordSpecialPurpose($swordSpecialPurposeNumber1, $swordAlignment1);
+$swordSpecialPurpose2 = getSwordSpecialPurpose($swordSpecialPurposeNumber2, $swordAlignment2);
+$swordSpecialPurpose3 = getSwordSpecialPurpose($swordSpecialPurposeNumber3, $swordAlignment3);
+
+$swordNumberBanes0 = getNumberOfBanes($dieRoll0);
+$swordNumberBanes1 = getNumberOfBanes($dieRoll1);
+$swordNumberBanes2 = getNumberOfBanes($dieRoll2);
+$swordNumberBanes3 = getNumberOfBanes($dieRoll3);
+
+$swordBaneTypes0 = array();
+$swordBaneTypes1 = array();
+$swordBaneTypes2 = array();
+$swordBaneTypes3 = array();
+
+$swordBaneTypes0 = getBaneType($swordNumberBanes0);
+$swordBaneTypes1 = getBaneType($swordNumberBanes1);
+$swordBaneTypes2 = getBaneType($swordNumberBanes2);
+$swordBaneTypes3 = getBaneType($swordNumberBanes3);
+
+$swordBaneEffect0 = array();
+$swordBaneEffect1 = array();
+$swordBaneEffect2 = array();
+$swordBaneEffect3 = array();
+
+$swordBaneEffect0 = getBaneEffect($swordNumberBanes0);
+$swordBaneEffect1 = getBaneEffect($swordNumberBanes1);
+$swordBaneEffect2 = getBaneEffect($swordNumberBanes2);
+$swordBaneEffect3 = getBaneEffect($swordNumberBanes3);
 
 
 ?>
@@ -94,12 +146,51 @@ $swordCommunication3 = getSwordCommunication($dieRoll3);
             ?>
     </span>
 	
+        
+    <span id="swordCommunication0">
+        <?php
+            echo $swordCommunication0;
+            ?>
+    </span>
 	
 	<span id="dieRoll0">
         <?php
             echo 'Die Roll: ' . $dieRoll0;
             ?>
     </span>
+        
+    <span id="swordSpecialPurpose0">
+        <?php
+
+        $count = 1;
+
+            foreach($swordSpecialPurpose0 as $purpose)
+            {
+                echo $count . '. '. $purpose . '<br/>';
+
+                ++$count;
+            }
+            ?>
+    </span>
+
+            
+    <span id="swordBane0">
+        <?php
+
+        $count = 1;
+
+        for($i = 0; $i <$swordNumberBanes0; ++$i)
+        {
+            echo $count . ' ' . $swordBaneTypes0[$i] . ': <span class="baneEffect">' .  $swordBaneEffect0[$i] . '.</span><br/>';
+            ++$count;
+        }
+
+            ?>
+    </span>
+
+
+
+
 
 </aside>
 
@@ -133,12 +224,50 @@ $swordCommunication3 = getSwordCommunication($dieRoll3);
         }
             ?>
     </span>
+
+    	
+        
+    <span id="swordCommunication1">
+        <?php
+            echo $swordCommunication1;
+            ?>
+    </span>
+
 		
 	<span id="dieRoll1">
         <?php
             echo 'Die Roll: ' . $dieRoll1;
             ?>
     </span>
+
+    <span id="swordSpecialPurpose1">
+        <?php
+
+            $count = 1;
+
+            foreach($swordSpecialPurpose1 as $purpose)
+            {
+                echo $count . '. '. $purpose . '<br/>';
+
+                ++$count;
+            }
+            ?>
+    </span>
+
+    <span id="swordBane1">
+        <?php
+
+        $count = 1;
+
+        for($i = 0; $i <$swordNumberBanes1; ++$i)
+        {
+            echo $count . ' ' . $swordBaneTypes1[$i] . ': <span class="baneEffect">' .  $swordBaneEffect1[$i] . '.</span><br/>';
+            ++$count;
+        }
+
+            ?>
+    </span>
+
 
 </aside>
 
@@ -175,6 +304,14 @@ $swordCommunication3 = getSwordCommunication($dieRoll3);
         }
             ?>
     </span>
+
+    	
+        
+    <span id="swordCommunication2">
+        <?php
+            echo $swordCommunication2;
+            ?>
+    </span>
 		
 			
 	<span id="dieRoll2">
@@ -182,6 +319,37 @@ $swordCommunication3 = getSwordCommunication($dieRoll3);
             echo 'Die Roll: ' . $dieRoll2;
             ?>
     </span>
+
+    <span id="swordSpecialPurpose2">
+        <?php
+
+            $count = 1;
+
+            foreach($swordSpecialPurpose2 as $purpose)
+            {
+                echo $count . '. '. $purpose . '<br/>';
+
+                ++$count;
+            }
+            ?>
+    </span>
+
+    <span id="swordBane2">
+        <?php
+
+        $count = 1;
+
+        for($i = 0; $i <$swordNumberBanes2; ++$i)
+        {
+            echo $count . ' ' . $swordBaneTypes2[$i] . ': <span class="baneEffect">' .  $swordBaneEffect2[$i] . '.</span><br/>';
+            ++$count;
+        }
+
+            ?>
+    </span>
+
+
+
 
 </aside>
 
@@ -214,11 +382,47 @@ $swordCommunication3 = getSwordCommunication($dieRoll3);
         }
             ?>
     </span>
+    	
+        
+    <span id="swordCommunication3">
+        <?php
+            echo $swordCommunication3;
+            ?>
+    </span>
 		
 				
 	<span id="dieRoll3">
         <?php
             echo 'Die Roll: ' . $dieRoll3;
+            ?>
+    </span>
+
+    <span id="swordSpecialPurpose3">
+        <?php
+
+        $count = 1;
+
+        foreach($swordSpecialPurpose3 as $purpose)
+        {
+            echo $count . '. '. $purpose . '<br/>';
+
+            ++$count;
+        }
+            ?>
+    </span>
+
+    
+    <span id="swordBane3">
+        <?php
+
+        $count = 1;
+
+        for($i = 0; $i <$swordNumberBanes3; ++$i)
+        {
+            echo $count . ' ' . $swordBaneTypes3[$i] . ': <span class="baneEffect">' .  $swordBaneEffect3[$i] . '.</span><br/>';
+            ++$count;
+        }
+
             ?>
     </span>
 

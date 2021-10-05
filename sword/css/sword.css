@@ -66,6 +66,39 @@ body{
 }
 
 
+
+#swordCommunication0, #swordCommunication1, #swordCommunication2, #swordCommunication3{
+    position: absolute;
+    top: 182px;
+    left: 45px;
+}
+
+
+
+#swordSpecialPurpose0, #swordSpecialPurpose1, #swordSpecialPurpose2, #swordSpecialPurpose3{
+    position: absolute;
+    top: 220px;
+    left: 45px;
+	width:420px;
+	font-size: 0.85em;
+}
+
+
+
+#swordBane0, #swordBane1, #swordBane2, #swordBane3{
+    position: absolute;
+    top: 300px;
+    left: 45px;
+	width:420px;
+	font-size: 0.85em;
+}
+
+.baneEffect{
+	font-weight: normal;
+}
+
+
+
 #dieRoll0, #dieRoll1, #dieRoll2, #dieRoll3{
     position: absolute;
     top: 72px;
