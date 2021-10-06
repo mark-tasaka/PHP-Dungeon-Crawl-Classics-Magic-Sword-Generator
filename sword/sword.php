@@ -112,6 +112,26 @@ $swordBaneEffect1 = getBaneEffect($swordNumberBanes1);
 $swordBaneEffect2 = getBaneEffect($swordNumberBanes2);
 $swordBaneEffect3 = getBaneEffect($swordNumberBanes3);
 
+$swordPowerNumber0 = array();
+$swordPowerNumber1 = array();
+$swordPowerNumber2 = array();
+$swordPowerNumber3 = array();
+
+$swordPowerNumber0 = getSwordPowerCount($dieRoll0);
+$swordPowerNumber1 = getSwordPowerCount($dieRoll1);
+$swordPowerNumber2 = getSwordPowerCount($dieRoll2);
+$swordPowerNumber3 = getSwordPowerCount($dieRoll3);
+
+$swordIPower0 = $swordPowerNumber0[0];
+$swordIPower1 = $swordPowerNumber1[0];
+$swordIPower2 = $swordPowerNumber2[0];
+$swordIPower3 = $swordPowerNumber3[0];
+
+$swordIIPower0 = $swordPowerNumber0[1];
+$swordIIPower1 = $swordPowerNumber1[1];
+$swordIIPower2 = $swordPowerNumber2[1];
+$swordIIPower3 = $swordPowerNumber3[1];
+
 
 ?>
 

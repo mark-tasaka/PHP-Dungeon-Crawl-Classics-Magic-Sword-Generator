@@ -673,4 +673,202 @@ function getBaneEffect($input)
     return $swordBaneEffects;
 }
 
+
+function getSwordPowerCount($input)
+{    
+    $swordPowerCount = array();
+    
+    if($input <= 50)
+    {
+        $die = rand(1, 2);
+
+        if($die === 1)
+        {
+            array_push($swordPowerCount, 0);
+        }
+        else
+        {
+            array_push($swordPowerCount, 1);
+        }
+        
+        array_push($swordPowerCount, 0);
+        array_push($swordPowerCount, 0);
+
+        return $swordPowerCount;
+    }
+    else if($input >= 51 && $input <= 75)
+    {
+        $die = rand(1, 4);
+
+        if($die === 1)
+        {
+            array_push($swordPowerCount, 0);
+        }
+        else
+        {
+            array_push($swordPowerCount, 1);
+        }
+        
+        array_push($swordPowerCount, 0);
+        array_push($swordPowerCount, 0);
+
+        return $swordPowerCount;
+    }
+    else if($input >= 76 && $input <= 85)
+    {
+        $powersI = 1;
+        $die = rand(1, 2);
+        
+        array_push($swordPowerCount, $powersI);
+
+        if($die === 1)
+        {
+            array_push($swordPowerCount, 0);
+        }
+        else
+        {
+            array_push($swordPowerCount, 1);
+        }
+        
+        array_push($swordPowerCount, 0);
+
+        return $swordPowerCount;
+    }
+    else if($input >= 86 && $input <= 90)
+    {
+        $powersI = rand(1, 3);
+        $die = rand(1, 4);
+        
+        array_push($swordPowerCount, $powersI);
+
+        if($die === 1)
+        {
+            array_push($swordPowerCount, 0);
+        }
+        else
+        {
+            array_push($swordPowerCount, 1);
+        }
+        
+        array_push($swordPowerCount, 0);
+
+        return $swordPowerCount;
+    }
+    else if($input >= 91 && $input <= 94)
+    {
+        $powersI = 0;
+        $powersII = 0;
+        $powersIII = 0;
+
+        $randomDie = rand(1, 4);
+
+        for($i = 0; $i < $randomDie; ++$i)
+        {
+            $chance = rand(1, 2);
+            if($chance === 1)
+            {
+                $powersI += 1;
+            }
+            else
+            {
+                $powersII += 1;
+            }
+        }
+        
+        array_push($swordPowerCount, $powersI);
+        array_push($swordPowerCount, $powersII);
+
+        $chance2 = rand(1, 2);
+        if($chance2 === 1)
+        {
+            $powersIII += 1;
+        }
+
+        array_push($swordPowerCount, $powersIII);
+    }
+    else if($input >= 95 && $input <= 96)
+    {
+        $powersI = 0;
+        $powersII = 0;
+        $powersIII = 0;
+
+        $randomDie = rand(2, 5);
+
+        for($i = 0; $i < $randomDie; ++$i)
+        {
+            $chance = rand(1, 2);
+            if($chance === 1)
+            {
+                $powersI += 1;
+            }
+            else
+            {
+                $powersII += 1;
+            }
+        }
+        
+        array_push($swordPowerCount, $powersI);
+        array_push($swordPowerCount, $powersII);
+
+        $chance2 = rand(1, 4);
+        if($chance2 < 4)
+        {
+            $powersIII += 1;
+        }
+
+        array_push($swordPowerCount, $powersIII);
+    }
+    else if($input >= 97 && $input <= 98)
+    {
+        $powersI = 0;
+        $powersII = 0;
+        $powersIII = 1;
+
+        $randomDie = rand(2, 5);
+
+        for($i = 0; $i < $randomDie; ++$i)
+        {
+            $chance = rand(1, 2);
+            if($chance === 1)
+            {
+                $powersI += 1;
+            }
+            else
+            {
+                $powersII += 1;
+            }
+        }
+        
+        array_push($swordPowerCount, $powersI);
+        array_push($swordPowerCount, $powersII);
+        array_push($swordPowerCount, $powersIII);
+    }
+    else
+    {
+        $powersI = 0;
+        $powersII = 0;
+        $powersIII = rand(1, 3);
+
+        $randomDie = rand(3, 6);
+
+        for($i = 0; $i < $randomDie; ++$i)
+        {
+            $chance = rand(1, 2);
+            if($chance === 1)
+            {
+                $powersI += 1;
+            }
+            else
+            {
+                $powersII += 1;
+            }
+        }
+        
+        array_push($swordPowerCount, $powersI);
+        array_push($swordPowerCount, $powersII);
+        array_push($swordPowerCount, $powersIII);
+    }
+
+}
+
 ?>
