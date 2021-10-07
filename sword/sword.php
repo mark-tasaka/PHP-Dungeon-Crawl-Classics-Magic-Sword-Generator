@@ -145,7 +145,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 
 <span id="swordType0">
         <?php
-            echo $swordToHit0 . ' ' . $swordType0;
+            echo $swordToHit0 . ' ' . $swordType0 . $swordToHit0 . ')';
             ?>
     </span>
 
@@ -175,38 +175,54 @@ $swordIIPower3 = $swordPowerNumber3[1];
 	
 	<span id="dieRoll0">
         <?php
-            echo 'Die Roll: ' . $dieRoll0;
+            echo $dieRoll0;
             ?>
     </span>
         
     <span id="swordSpecialPurpose0">
         <?php
 
-        $count = 1;
-
-            foreach($swordSpecialPurpose0 as $purpose)
-            {
-                echo $count . '. '. $purpose . '<br/>';
-
-                ++$count;
-            }
-            ?>
-    </span>
-
-            
-    <span id="swordBane0">
-        <?php
-
-        $count = 1;
-
-        for($i = 0; $i <$swordNumberBanes0; ++$i)
+        if( count($swordSpecialPurpose0) > 0 )
         {
-            echo $count . ' ' . $swordBaneTypes0[$i] . ': <span class="baneEffect">' .  $swordBaneEffect0[$i] . '.</span><br/>';
-            ++$count;
+
+            echo 'Sword Special Purpose:';
+            echo '<br/>';
+
+            $count = 1;
+    
+                foreach($swordSpecialPurpose0 as $purpose)
+                {
+                    echo '&nbsp&nbsp&nbsp' . $count . '. '. $purpose . '<br/>';
+    
+                    ++$count;
+                }
+                
+            echo '<br/><br/>';
+
         }
 
+        
+        if( count($swordBaneTypes0) > 0 )
+        {
+            echo 'Magic Sword Bane:';
+            echo '<br/>';
+            
+            $count = 1;
+
+            for($i = 0; $i <$swordNumberBanes0; ++$i)
+            {
+                echo $count . ' ' . $swordBaneTypes0[$i] . ': <span class="baneEffect">' .  $swordBaneEffect0[$i] . '.</span><br/>';
+                ++$count;
+            }
+
+        }
+
+
+
             ?>
     </span>
+
+
 
 
 
@@ -224,7 +240,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 
 <span id="swordType1">
         <?php
-            echo $swordToHit1 . ' ' . $swordType1;
+            echo $swordToHit1 . ' ' . $swordType1 . $swordToHit1 . ')';
             ?>
     </span>
     
@@ -256,7 +272,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 		
 	<span id="dieRoll1">
         <?php
-            echo 'Die Roll: ' . $dieRoll1;
+            echo $dieRoll1;
             ?>
     </span>
 
@@ -304,7 +320,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 
 <span id="swordType2">
         <?php
-            echo $swordToHit2 . ' ' . $swordType2;
+            echo $swordToHit2 . ' ' . $swordType2 . $swordToHit2 . ')';
             ?>
     </span>
     
@@ -336,7 +352,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 			
 	<span id="dieRoll2">
         <?php
-            echo 'Die Roll: ' . $dieRoll2;
+            echo $dieRoll2;
             ?>
     </span>
 
@@ -382,7 +398,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 
 <span id="swordType3">
         <?php
-            echo $swordToHit3 . ' ' . $swordType3;
+            echo $swordToHit3 . ' ' . $swordType3 . $swordToHit3 . ')';
             ?>
     </span>
     
@@ -413,7 +429,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
 				
 	<span id="dieRoll3">
         <?php
-            echo 'Die Roll: ' . $dieRoll3;
+            echo $dieRoll3;
             ?>
     </span>
 
@@ -452,9 +468,9 @@ $swordIIPower3 = $swordPowerNumber3[1];
 
 <script>
       
-  //let imgData = "images/magicSword.png";
+  let imgData = "images/sword.png";
      
-    //   $("#sheet").attr("src", imgData);
+       $("#sheet").attr("src", imgData);
        
      
 

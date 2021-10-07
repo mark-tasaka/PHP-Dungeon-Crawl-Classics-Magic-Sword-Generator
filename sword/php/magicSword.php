@@ -13,19 +13,19 @@ function getSwordType()
 
     if($number <= 15)
     {
-        return 'Dagger';
+        return 'Dagger (1d4/1d10';
     }
     else if($number >= 16 && $number <= 30)
     {
-        return 'Short Sword';
+        return 'Short Sword(1d6';
     }
     else if($number >= 31 && $number <= 80)
     {
-        return 'Longsword';
+        return 'Longsword(1d8';
     }
     else
     {
-        return 'Two-handed Sword';
+        return 'Two-handed Sword(1d10';
     }
 }
 
@@ -96,13 +96,13 @@ function getSwordIntelligence($input)
     if($input <= 50)
     {
         $int = rand(1, 6);
-        $roll = '(1d6)';
+        $roll = ' (1d6)';
     }
     else if($input >= 51 && $input <= 75)
     {
         $int = rand(1, 6);
         $int += 2;
-        $roll = '(1d6+2)';
+        $roll = ' (1d6+2)';
     }
     else if($input >= 76 && $input <= 85)
     {
@@ -110,21 +110,21 @@ function getSwordIntelligence($input)
         $die2 = rand(1, 4);
         $die3 = rand(1, 4);
         $int = $die1 + $die2 + $die3;
-        $roll = '(3d4)';
+        $roll = ' (3d4)';
     }
     else if($input >= 86 && $input <= 90)
     {
         $die1 = rand(1, 6);
         $die2 = rand(1, 6);
         $int = $die1 + $die2;
-        $roll = '(2d6)';
+        $roll = ' (2d6)';
     }
     else if($input >= 91 && $input <= 94)
     {
         $die1 = rand(1, 6);
         $die2 = rand(1, 6);
         $int = $die1 + $die2 + 2;
-        $roll = '(2d6+2)';
+        $roll = ' (2d6+2)';
     }
     else if($input >= 95 && $input <= 96)
     {
@@ -132,7 +132,7 @@ function getSwordIntelligence($input)
         $die2 = rand(1, 6);
         $die3 = rand(1, 6);
         $int = $die1 + $die2 + $die3;
-        $roll = '(3d6)';
+        $roll = ' (3d6)';
     }
     else if($input >= 97 && $input <= 98)
     {
@@ -140,7 +140,7 @@ function getSwordIntelligence($input)
         $die2 = rand(1, 6);
         $die3 = rand(1, 6);
         $int = $die1 + $die2 + $die3 + 2;
-        $roll = '(3d6+2)';
+        $roll = ' (3d6+2)';
     }
     else
     {
@@ -148,7 +148,7 @@ function getSwordIntelligence($input)
         $die2 = rand(1, 6);
         $die3 = rand(1, 6);
         $int = $die1 + $die2 + $die3 + 4;
-        $roll = '(3d6+4)';
+        $roll = ' (3d6+4)';
     }
 
     $inteligence = array($int, $roll);

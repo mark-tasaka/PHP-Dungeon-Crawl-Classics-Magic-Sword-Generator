@@ -46,43 +46,48 @@ body{
 
 #swordType0, #swordType1, #swordType2, #swordType3{
     position: absolute;
-    top: 72px;
+    top: 80px;
     left: 45px;
+	font-size: 1.2em;
 }
 
 
 #swordAlignment0, #swordAlignment1, #swordAlignment2, #swordAlignment3{
     position: absolute;
-    top: 132px;
-    left: 45px;
+    top: 118px;
+    left: 40px;
 }
 
 
 
 #swordIntelligence0, #swordIntelligence1, #swordIntelligence2, #swordIntelligence3{
     position: absolute;
-    top: 152px;
-    left: 45px;
+    top: 118px;
+    left: 113px;
 }
 
 
 
 #swordCommunication0, #swordCommunication1, #swordCommunication2, #swordCommunication3{
-    position: absolute;
-    top: 182px;
-    left: 45px;
+    position: absolute;;
+    top: 118px;
+    left: 215px;
 }
 
 
 
 #swordSpecialPurpose0, #swordSpecialPurpose1, #swordSpecialPurpose2, #swordSpecialPurpose3{
     position: absolute;
-    top: 220px;
-    left: 45px;
+    top: 160px;
+    left: 35px;
 	width:420px;
 	font-size: 0.85em;
 }
 
+#specialPurposeTitle0, #specialPurposeTitle1, #specialPurposeTitle2, #specialPurposeTitle3{
+    left: 245px;
+	font-size: 1em;
+}
 
 
 #swordBane0, #swordBane1, #swordBane2, #swordBane3{
@@ -101,6 +106,7 @@ body{
 
 #dieRoll0, #dieRoll1, #dieRoll2, #dieRoll3{
     position: absolute;
-    top: 72px;
-    left: 345px;
+    top: 60px;
+    left: 410px;
+	font-size: 2.2em;
 }
