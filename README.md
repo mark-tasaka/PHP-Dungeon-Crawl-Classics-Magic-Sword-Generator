@@ -6,6 +6,10 @@ Designed with PHP, the Dungeon Crawl Classics Magic Sword Generator generates th
 
 
 
+Update 1.05: 2021-10-08
+
+Add more functionality to magic sword generator.
+
 
 Update 1.04: 2021-10-07
 
