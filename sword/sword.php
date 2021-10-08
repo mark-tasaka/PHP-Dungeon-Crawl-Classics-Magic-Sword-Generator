@@ -32,7 +32,7 @@ $dieRoll2 = getDieRoll();
 $dieRoll3 = getDieRoll();
 */
 
-$dieRoll0 = 100;
+$dieRoll0 = 99;
 $dieRoll1 = 100;
 $dieRoll2 = 95;
 $dieRoll3 = 95;
@@ -87,6 +87,11 @@ $swordSpecialPurpose1 = getSwordSpecialPurpose($swordSpecialPurposeNumber1, $swo
 $swordSpecialPurpose2 = getSwordSpecialPurpose($swordSpecialPurposeNumber2, $swordAlignment2);
 $swordSpecialPurpose3 = getSwordSpecialPurpose($swordSpecialPurposeNumber3, $swordAlignment3);
 
+$swordSpecialPurposeCount0 = getSpecialPowerCount($swordSpecialPurpose0[0]);
+$swordSpecialPurposeCount1 = getSpecialPowerCount($swordSpecialPurpose1[0]);
+$swordSpecialPurposeCount2 = getSpecialPowerCount($swordSpecialPurpose2[0]);
+$swordSpecialPurposeCount3 = getSpecialPowerCount($swordSpecialPurpose3[0]);
+
 $swordNumberBanes0 = getNumberOfBanes($dieRoll0);
 $swordNumberBanes1 = getNumberOfBanes($dieRoll1);
 $swordNumberBanes2 = getNumberOfBanes($dieRoll2);
@@ -127,10 +132,25 @@ $swordIPower1 = $swordPowerNumber1[0];
 $swordIPower2 = $swordPowerNumber2[0];
 $swordIPower3 = $swordPowerNumber3[0];
 
+$swordIPowerArray0 = array();
+$swordIPowerArray1 = array();
+$swordIPowerArray2 = array();
+$swordIPowerArray3 = array();
+
+$swordIPowerArray0 = getPowerTypeI($swordIPower0);
+$swordIPowerArray1 = getPowerTypeI($swordIPower1);
+$swordIPowerArray2 = getPowerTypeI($swordIPower2);
+$swordIPowerArray3 = getPowerTypeI($swordIPower3);
+
 $swordIIPower0 = $swordPowerNumber0[1];
 $swordIIPower1 = $swordPowerNumber1[1];
 $swordIIPower2 = $swordPowerNumber2[1];
 $swordIIPower3 = $swordPowerNumber3[1];
+
+$swordIIIPower0 = $swordPowerNumber0[2];
+$swordIIIPower1 = $swordPowerNumber1[2];
+$swordIIIPower2 = $swordPowerNumber2[2];
+$swordIIIPower3 = $swordPowerNumber3[2];
 
 
 ?>
@@ -182,7 +202,7 @@ $swordIIPower3 = $swordPowerNumber3[1];
     <span id="swordSpecialPurpose0">
         <?php
 
-        if( count($swordSpecialPurpose0) > 0 )
+        if( $swordSpecialPurposeCount0 > 0 )
         {
 
             echo 'Sword Special Purpose:';
@@ -192,31 +212,52 @@ $swordIIPower3 = $swordPowerNumber3[1];
     
                 foreach($swordSpecialPurpose0 as $purpose)
                 {
-                    echo '&nbsp&nbsp&nbsp' . $count . '. '. $purpose . '<br/>';
+                    echo $count . '. '. $purpose . '<br/>';
     
                     ++$count;
                 }
                 
-            echo '<br/><br/>';
+            echo '<br/>';
 
         }
 
+
+
         
-        if( count($swordBaneTypes0) > 0 )
+        if( $swordNumberBanes0 > 0 )
         {
-            echo 'Magic Sword Bane:';
+            echo 'Sword Bane:';
             echo '<br/>';
             
             $count = 1;
 
             for($i = 0; $i <$swordNumberBanes0; ++$i)
             {
-                echo $count . ' ' . $swordBaneTypes0[$i] . ': <span class="baneEffect">' .  $swordBaneEffect0[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordBaneTypes0[$i] . ': <span class="baneEffect">' .  $swordBaneEffect0[$i] . '.</span><br/>';
                 ++$count;
             }
+                
+            echo '<br/>';
 
         }
 
+                
+        if( count($swordIPowerArray0)  > 0 )
+        {
+            echo 'Type I: Natural Powers';
+            echo '<br/>';
+            
+            $count = 1;
+
+            for($i = 0; $i <$swordIPower0; ++$i)
+            {
+                echo $count . '. ' . $swordIPowerArray0[$i] . '<br/>';
+                ++$count;
+            }
+                
+            echo '<br/>';
+
+        }
 
 
             ?>

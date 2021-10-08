@@ -17,15 +17,15 @@ function getSwordType()
     }
     else if($number >= 16 && $number <= 30)
     {
-        return 'Short Sword(1d6';
+        return 'Short Sword (1d6';
     }
     else if($number >= 31 && $number <= 80)
     {
-        return 'Longsword(1d8';
+        return 'Longsword (1d8';
     }
     else
     {
-        return 'Two-handed Sword(1d10';
+        return 'Two-handed Sword (1d10';
     }
 }
 
@@ -537,6 +537,18 @@ function getSwordSpecialPurpose($power, $alignment)
 
 }
 
+function getSpecialPowerCount($input)
+{
+    if($input === '')
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}
+
 
 
 function getNumberOfBanes($input)
@@ -760,10 +772,13 @@ function getSwordPowerCount($input)
         $powersII = 0;
         $powersIII = 0;
 
+
         $randomDie = rand(1, 4);
 
         for($i = 0; $i < $randomDie; ++$i)
         {
+            $powersI = 3;
+            
             $chance = rand(1, 2);
             if($chance === 1)
             {
@@ -781,7 +796,7 @@ function getSwordPowerCount($input)
         $chance2 = rand(1, 2);
         if($chance2 === 1)
         {
-            $powersIII += 1;
+            $powersIII = 1;
         }
 
         array_push($swordPowerCount, $powersIII);
@@ -869,6 +884,190 @@ function getSwordPowerCount($input)
         array_push($swordPowerCount, $powersIII);
     }
 
+    return $swordPowerCount;
+
 }
+
+
+
+function getPowerTypeI($input)
+{
+    $swordPower = array(
+        'Read any non-magical map at will',
+        'Read 1d6 randomly determined languages',
+        'Comprehend languages 1/day',
+        'Speak thieves’ cant',
+        'Detect secret doors within 1d6 x 10’',
+        'Detect gems within 1d4 x 10’',
+        'Detect gold within 1d8 x 10’',
+        'Detect evil within 1d4 x 10’',
+        'Detect good within 1d4 x 10’',
+        'Detect traps within 2d4 x 10’',
+        'Detect magic 1/day',
+        'Detect magic 2/day',
+        'Detect invisible 1/day',
+        'Locate object 2/day',
+        'Shed light with 20’ radius at will',
+        'Obscure surroundings with 20’ globe of darkness at will',
+        'Detect sloping passages within 1d10 x 10’',
+        'Detect water within 1d8 x 10’',
+        ' Detect certain creature type within 1d10 x 100’ (e.g., spiders, dragons, goblinoids, men, etc.)',
+        'Wielder gains infravision 120’');
+
+    shuffle($swordPower);
+
+    $swordTypeI = array();
+
+    for($i = 0; $i < $input; ++$i)
+    {
+        array_push($swordTypeI, $swordPower[$i]);
+    }
+
+    return $swordTypeI;
+
+}
+
+function getPowerIINumbers($input)
+{
+    $powerIIArray = array();
+    $swordArray = array();
+
+    for($i = 0; $i <=20; ++$i)
+    {
+        array_push($powerIIArray, $i);
+    }
+
+    shuffle($powerIIArray);
+
+    for($j = 0; $j < $input; ++$j)
+    {
+        array_push($swordArray, $powerIIArray[$j]);
+    }
+
+    return $swordArray;
+
+}
+
+
+function getPowerTypeIIName($inputArray)
+{
+    $swordPower = array(
+        'Crippler.',
+        'Flame brand.',
+        'Flame tongue.',
+        'Frostburn.',
+        'Cleave.',
+        'Vampiric touch.',
+        'Life drainer.',
+        'Regenerator.',
+        'Energy mimic.',
+        'Shock blade.',
+        'Vorpal blade.',
+        'Thunder blade.',
+        'Eviscerator.',
+        'Medusa’s touch.',
+        'Great strength.',
+        'Holy brand.',
+        'Precise strike.',
+        'Whirlwind strike',
+        'Armor-breaker.',
+        'Weapon-breaker.',
+        'Throwing blade.');
+
+    $count = count($inputArray);
+
+    $swordTypeII = array();
+
+    for($i = 0; $i < $count; ++$i)
+    {
+        $power = $inputArray[$i];
+        array_push($swordTypeII, $power);
+    }
+
+    return $swordTypeII;
+
+}
+
+
+function getPowerTypeIIDescription($inputArray)
+{
+    $swordPower = array(
+        'Always roll critical hits as warrior of one level higher than wielder.',
+        'Ignite in flame 3/day. Duration 6 rounds. Inflicts additional 1d6 damage and ignites targets on fire (Ref save to avoid; DC = 1d10+5).',
+        'Launch jet of flame 1/day. Jet is cone, 40’ long and 10’ wide at end. All within take 2d6 damage and may catch on fire (Ref save to avoid; DC = 1d10+10).',
+        'Inflict additional 1d3 cold damage with every strike. Double damage to fire elementals.',
+        'Each time an enemy is slain with this blade, the wielder automatically receive another attack (but cannot  move). Note that certain bloodthirsty blades may attempt to force the wielder to attack an ally.',
+        'Any time the wielder inflicts 10 or more points of damage in a single strike, he heals 1 hit point.',
+        'he blade drains 1d4 XP with every blow, in addition to other damage.',
+        'When wielding this blade, the wielder’s natural rate of healing is doubled. In addition, the wielder recovers twice as many hit points as usual whenever a cleric lays hands upon him.',
+        'When attacked by any form of energy attack (e.g., fire, cold, force, electricity, etc.), the wielder may attempt to capture the energy within the sword. Make an attack roll. (This is not actually an attack, but reflects the sword’s ability. Note that it does not prevent the wielder from taking damage; attempt saves as normal per the spell effect.) If the attack roll exceeds the spell check DC of the energy effect, the wielder captures that effect. He may unleash an identical effect as an attack action at some point within the next 24 hours. Once unleashed, the effect is lost. The sword only retains the most recent captured effect.',
+        'Inflict an additional 1d4 electrical damage with every strike, doubled to 2d4 if opponent wears metal armor, is in water, or is composed of metal (such as a golem or living statue).',
+        'On any critical hit, the wielder automatically decapitates enemy, causing instant death.',
+        'In place of an attack, the wielder may strike the ground to create the resounding boom of thunder. All enemies within 40’ take 1d8 points of sonic damage (no save).',
+        'When rolling damage, the wielder rolls an additional damage die every time he rolls the highest result on a die. For example, if this weapon is a long sword and the wielder rolls an “8” on the 1d8 damage roll, then rolls another 1d8 and adds that to the damage result. If that second 1d8 produces another “8”, he rolls a third 1d8, and so on.',
+        'A creature struck by this blade must make a Fort save (DC = 1d10+10) or be turned to stone permanently.',
+        'Wielder’s Strength is increased by +4 while wielding blade.',
+        'Inflicts an additional +1d4 damage against unholy creatures.',
+        'Additional +1d4 bonus to attack rolls.',
+        'Instead of making his normal attack, the wielder can make two attacks in a single round, but rolls 1d10 for each attack instead of 1d20. He applies his normal attack bonus. Critical hits are not possible when attacking in this manner.',
+        'On any critical hit, the opponent’s armor is destroyed, in addition to other effects.',
+        'On any critical hit, the opponent’s weapon is destroyed, in addition to other effects. If the creature has natural weapons, they are maimed (e.g., claws are broken, teeth are shattered, etc.).',
+        'Sword can be thrown up to 20’ to make a ranged attack. It always returns to its owner’s hand after a throw.');
+
+    $count = count($inputArray);
+
+    $swordTypeII = array();
+
+    for($i = 0; $i < $count; ++$i)
+    {
+        $power = $inputArray[$i];
+        array_push($swordTypeII, $power);
+    }
+
+    return $swordTypeII;
+
+}
+
+
+
+function getPowerTypeIII($input)
+{
+    $swordPower = array(
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '');
+
+    shuffle($swordPower);
+
+    $swordTypeIII = array();
+
+    for($i = 0; $i < $input; ++$i)
+    {
+        array_push($swordTypeIII, $swordPower[$i]);
+    }
+
+    return $swordTypeIII;
+
+}
+
 
 ?>
