@@ -980,7 +980,7 @@ function getPowerTypeIIName($inputArray)
 
     for($i = 0; $i < $count; ++$i)
     {
-        $power = $inputArray[$i];
+        $power = $swordPower[$i];
         array_push($swordTypeII, $power);
     }
 
@@ -1020,7 +1020,7 @@ function getPowerTypeIIDescription($inputArray)
 
     for($i = 0; $i < $count; ++$i)
     {
-        $power = $inputArray[$i];
+        $power = $swordPower[$i];
         array_push($swordTypeII, $power);
     }
 
@@ -1029,43 +1029,88 @@ function getPowerTypeIIDescription($inputArray)
 }
 
 
-
-function getPowerTypeIII($input)
+function getPowerIIINumbers($input)
 {
-    $swordPower = array(
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '');
+    $powerIIIArray = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
+    $swordArray = array();
 
-    shuffle($swordPower);
+    shuffle($powerIIIArray);
 
-    $swordTypeIII = array();
-
-    for($i = 0; $i < $input; ++$i)
+    for($j = 0; $j < $input; ++$j)
     {
-        array_push($swordTypeIII, $swordPower[$i]);
+        array_push($swordArray, $powerIIIArray[$j]);
     }
 
-    return $swordTypeIII;
+    return $swordArray;
+
+}
+
+
+function getPowerTypeIIIName($inputArray)
+{
+    $swordPower = array(
+        'Spell healer',
+        'Spellburn reservoir.',
+        'Spell magnifier.',
+        'Shift planes.',
+        'Demon-binding.',
+        'Summon creature.',
+        'Resistance.',
+        'Immune to non-magical attacks.',
+        'Resistance to critical hits.',
+        'Flight.',
+        'Turn invisible.',
+        'Magic resistance.',
+        'Supreme willpower.',
+        'Un-dead touch.',
+        'Regeneration.');
+
+        $count = count($inputArray);
+
+        $swordTypeII = array();
+    
+        for($i = 0; $i < $count; ++$i)
+        {
+            $power = $swordPower[$i];
+            array_push($swordTypeII, $power);
+        }
+    
+        return $swordTypeII;
+
+}
+
+
+
+function getPowerTypeIIIDesc($inputArray)
+{
+    $swordPower = array(
+        'Wielder heals spellburn at 3x the normal rate: with no rest, heals 3 points of ability score loss each night, and with rest, heals 6 points each night.',
+        'Each day, the wielder can burn up to 3 points of the sword’s Intelligence on spellburn to affect his spellcasting as if he were spellburning his own abilities. The sword’s lost ability scores heal in full each night.',
+        'The wielder casts all spells at +1 caster level.',
+        'The wielder can shift to an adjacent plane 1/day, arriving in the position corresponding to his current position. There is a 10% chance that the sword also allows him to take along up to 1d4+1 allies with each plane shift.',
+        'With any successful strike against a demon or other extraplanar creature, the target must make a DC 20 Will save or be bound to its current exact location for 1d4 turns. It cannot take any steps or teleport out unless this effect is magically dispelled.',
+        'The sword is magically keyed to a specific creature type (e.g., wolf, lion, pegasus, etc.). The wielder can summon such a creature 1d3 times per day.',
+        'The sword grants its wielder resistance to certain forms of attack. The wielder ignores the first 3 points of damage from that form of attack each round, and gains a +1 bonus to saving throws against that form of damage. The form of attack is (roll 1d6) (1) fire, (2) cold, (3) acid, (4) lightning, (5) poison, (6) drowning.',
+        'The sword makes its wielder resistant to non-magical attacks. The wielder resists the first 5 points of damage each round by attacks of a non-magical nature. Creatures of 5+ HD are considered “magical” for purposes of this effect',
+        'The sword makes the wielder hard to inflict critical damage upon. The wielder receives an automatic Fort save whenever a critical occurs against him. The DC is equal to the natural die roll used to score the crit (usually 20 but not always). If he makes this save, the critical does not take effect.',
+        'The wielder can fly at a speed of 30’.',
+        'Up to 1d3 times per day, the wielder can turn invisible for a duration of 1d4 turns. The invisibility vanishes immediately if the wielder attacks.',
+        'All spells directed specifically at the wielder suffer a -2 spell check penalty',
+        'The wielder receives a +2 bonus to Will saves.',
+        'The weapon scores critical hits as an un-dead creature, rolling 1d30 on crit table U whenever a crit is scored.',
+        'As long as he wields this weapon in his hand, the wielder regenerates 1 point of damage each round.');
+
+        $count = count($inputArray);
+
+        $swordTypeII = array();
+    
+        for($i = 0; $i < $count; ++$i)
+        {
+            $power = $swordPower[$i];
+            array_push($swordTypeII, $power);
+        }
+    
+        return $swordTypeII;
 
 }
 
