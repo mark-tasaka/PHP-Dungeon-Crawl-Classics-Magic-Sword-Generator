@@ -84,6 +84,15 @@ body{
 	font-size: 0.85em;
 }
 
+#swordSpecialPurposeMessage0, #swordSpecialPurposeMessage1, #swordSpecialPurposeMessage2, #swordSpecialPurposeMessage3{
+    position: absolute;
+    top: 600px;
+    left: 35px;
+	width:420px;
+	font-size: 0.85em;
+	font-weight: normal;
+}
+
 #specialPurposeTitle0, #specialPurposeTitle1, #specialPurposeTitle2, #specialPurposeTitle3{
     left: 245px;
 	font-size: 1em;

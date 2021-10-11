@@ -537,6 +537,26 @@ function getSwordSpecialPurpose($power, $alignment)
 
 }
 
+function getSpecialPurposeMessage ($inputNumber, $alignment)
+{
+    $message = '';
+    $length = count($inputNumber);
+
+    if($alignment === 'Lawful' || $alignment === 'Chaotic')
+    {
+        for($i = 0; $i < $length; ++$i)
+        {
+            if($inputNumber[$i] === 9 || $inputNumber[$i] === 10 || $inputNumber[$i] === 11)
+            {
+                $message = '*With this result, the indicated creatures are treated as banes.';
+                return $message;
+            }
+        }
+    }
+    return $message;
+}
+
+
 function getSpecialPowerCount($input)
 {
     if($input === '')
@@ -969,7 +989,7 @@ function getPowerTypeIIName($inputArray)
         'Great strength.',
         'Holy brand.',
         'Precise strike.',
-        'Whirlwind strike',
+        'Whirlwind strike.',
         'Armor-breaker.',
         'Weapon-breaker.',
         'Throwing blade.');
@@ -1049,7 +1069,7 @@ function getPowerIIINumbers($input)
 function getPowerTypeIIIName($inputArray)
 {
     $swordPower = array(
-        'Spell healer',
+        'Spell healer.',
         'Spellburn reservoir.',
         'Spell magnifier.',
         'Shift planes.',

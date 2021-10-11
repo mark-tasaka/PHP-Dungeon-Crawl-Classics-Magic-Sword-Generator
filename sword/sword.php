@@ -82,6 +82,11 @@ $swordSpecialPurpose1 = getSwordSpecialPurpose($swordSpecialPurposeNumber1, $swo
 $swordSpecialPurpose2 = getSwordSpecialPurpose($swordSpecialPurposeNumber2, $swordAlignment2);
 $swordSpecialPurpose3 = getSwordSpecialPurpose($swordSpecialPurposeNumber3, $swordAlignment3);
 
+$swordSpecialPurposeMessage0 = getSpecialPurposeMessage($swordSpecialPurposeNumber0, $swordAlignment0);
+$swordSpecialPurposeMessage1 = getSpecialPurposeMessage($swordSpecialPurposeNumber1, $swordAlignment1);
+$swordSpecialPurposeMessage2 = getSpecialPurposeMessage($swordSpecialPurposeNumber2, $swordAlignment2);
+$swordSpecialPurposeMessage3 = getSpecialPurposeMessage($swordSpecialPurposeNumber3, $swordAlignment3);
+
 $swordSpecialPurposeCount0 = getSpecialPowerCount($swordSpecialPurpose0[0]);
 $swordSpecialPurposeCount1 = getSpecialPowerCount($swordSpecialPurpose1[0]);
 $swordSpecialPurposeCount2 = getSpecialPowerCount($swordSpecialPurpose2[0]);
@@ -325,7 +330,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIPower0; ++$i)
             {
-                echo $count . '. ' . $swordIIPowerArrayName0[$i] . ': <span class="baneEffect">' .  $swordIIPowerArrayDesc0[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIPowerArrayName0[$i] . ' <span class="baneEffect">' .  $swordIIPowerArrayDesc0[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -342,7 +347,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIIPower0; ++$i)
             {
-                echo $count . '. ' . $swordIIIPowerArrayName0[$i] . ': <span class="baneEffect">' .  $swordIIIPowerArrayDesc0[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIIPowerArrayName0[$i] . ' <span class="baneEffect">' .  $swordIIIPowerArrayDesc0[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -350,12 +355,17 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
         }
 
-
-
             ?>
     </span>
 
 
+	
+	<span id="swordSpecialPurposeMessage0">
+        <?php
+            echo $swordSpecialPurposeMessage0;
+            ?>
+    </span>
+        
 
 
 
@@ -482,7 +492,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIPower1; ++$i)
             {
-                echo $count . '. ' . $swordIIPowerArrayName1[$i] . ': <span class="baneEffect">' .  $swordIIPowerArrayDesc1[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIPowerArrayName1[$i] . ' <span class="baneEffect">' .  $swordIIPowerArrayDesc1[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -499,7 +509,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIIPower1; ++$i)
             {
-                echo $count . '. ' . $swordIIIPowerArrayName1[$i] . ': <span class="baneEffect">' .  $swordIIIPowerArrayDesc1[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIIPowerArrayName1[$i] . ' <span class="baneEffect">' .  $swordIIIPowerArrayDesc1[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -507,10 +517,17 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
         }
 
-
-
             ?>
     </span>
+
+
+	
+	<span id="swordSpecialPurposeMessage1">
+        <?php
+            echo $swordSpecialPurposeMessage1;
+            ?>
+    </span>
+        
 
 
 </aside>
@@ -637,7 +654,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIPower2; ++$i)
             {
-                echo $count . '. ' . $swordIIPowerArrayName2[$i] . ': <span class="baneEffect">' .  $swordIIPowerArrayDesc2[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIPowerArrayName2[$i] . ' <span class="baneEffect">' .  $swordIIPowerArrayDesc2[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -654,7 +671,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIIPower2; ++$i)
             {
-                echo $count . '. ' . $swordIIIPowerArrayName2[$i] . ': <span class="baneEffect">' .  $swordIIIPowerArrayDesc2[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIIPowerArrayName2[$i] . ' <span class="baneEffect">' .  $swordIIIPowerArrayDesc2[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -666,6 +683,15 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             ?>
     </span>
+
+
+	
+	<span id="swordSpecialPurposeMessage2">
+        <?php
+            echo $swordSpecialPurposeMessage2;
+            ?>
+    </span>
+        
 
 
 </aside>
@@ -786,7 +812,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIPower3; ++$i)
             {
-                echo $count . '. ' . $swordIIPowerArrayName3[$i] . ': <span class="baneEffect">' .  $swordIIPowerArrayDesc3[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIPowerArrayName3[$i] . ' <span class="baneEffect">' .  $swordIIPowerArrayDesc3[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -803,7 +829,7 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             for($i = 0; $i <$swordIIIPower3; ++$i)
             {
-                echo $count . '. ' . $swordIIIPowerArrayName3[$i] . ': <span class="baneEffect">' .  $swordIIIPowerArrayDesc3[$i] . '.</span><br/>';
+                echo $count . '. ' . $swordIIIPowerArrayName3[$i] . ' <span class="baneEffect">' .  $swordIIIPowerArrayDesc3[$i] . '.</span><br/>';
                 ++$count;
             }
                 
@@ -815,6 +841,15 @@ $swordIIIPowerArrayDesc3 = getPowerTypeIIIDesc($swordIIIPowerArrayNumber3);
 
             ?>
     </span>
+
+
+	
+	<span id="swordSpecialPurposeMessage3">
+        <?php
+            echo $swordSpecialPurposeMessage3;
+            ?>
+    </span>
+        
 
 
 
