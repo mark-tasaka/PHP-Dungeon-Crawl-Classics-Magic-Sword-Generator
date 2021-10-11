@@ -4,6 +4,19 @@ Designed with PHP, the Dungeon Crawl Classics Magic Sword Generator generates th
 
 ------------------
 
+Live versions of the Dungeon Crawl Classics Magic Sword Generator are avaliable at:
+
+https://www.tasaka-games.com/greenleaf/more/sword/
+
+https://www.tasaka-games.com/dcc/more/sword/
+
+
+-------------------
+
+
+Update 1.07: 2021-10-11
+
+A completed version of the Dungeon Crawl Classics Sword Generator added.  Links to live versions of the Sword Generator added.
 
 
 Update 1.06: 2021-10-09
